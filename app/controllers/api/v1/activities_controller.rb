@@ -1,4 +1,4 @@
-class Api::V1::ActivitiesController < Api::V1::ApplicationController
+class Api::V1::ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :update, :destroy]
 
   # GET /activities
