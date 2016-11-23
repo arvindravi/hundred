@@ -1,15 +1,20 @@
-development:
+default: &default
   adapter: postgresql
   encoding: unicode
-  database: hundred_development
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: arvindravi
-  password: hundred
+
+development:
+  <<: *default
+  database: hundred_development
 
 test:
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: hundred_test
-  pool: 5
-  username: arvindravi
-  password: hundred
+
+production:
+  <<: *default
+  database: hundred_production
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
