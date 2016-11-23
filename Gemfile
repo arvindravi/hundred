@@ -46,3 +46,6 @@ gem 'active_model_serializers'
 
 # Rack-Attack
 gem 'rack-attack'
+
+# PG
+gem 'pg'
